@@ -216,7 +216,7 @@ for($ii=0; $ii<$framesToshow; $ii+=10){
     $frames[]=$png_data;
     $framed[]=$delay;
     $loops = 0;
-    imagedestroy($image);
+    //imagedestroy($image);
 
 }
 
