@@ -3,6 +3,11 @@ Generate Animated Wireframes
 
 This PHP script generates an animated wireframe of a 3D object in `.obj` format. It takes a `.obj` file, extracts its vertices and faces, and then rotates the object around the X, Y, and Z axes to create a 360-degree animation.
 
+DEMO
+------------
+
+[DEMO](https://piktar.tech/MonkeyWireframe/)
+
 Requirements
 ------------
 
