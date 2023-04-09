@@ -220,33 +220,27 @@ for($ii=0; $ii<$framesToshow; $ii+=10){
 
 }
 
+try{
+    $gif = new GIFEncoder	(
+        $frames,
+        $framed,
+        0,
+        2,
+        1, 1, 1,
+        "bin"
+    );
 
-$gif = new GIFEncoder	(
-    $frames,
-    $framed,
-    0,
-    2,
-    1, 1, 1,
-    "bin"
-);
-/*
-		Possibles outputs:
-		==================
-
-        Output as GIF for browsers :
-        	- Header ( 'Content-type:image/gif' );
-        Output as GIF for browsers with filename:
-        	- Header ( 'Content-disposition:Attachment;filename=myanimation.gif');
-        Output as file to store into a specified file:
-        	- FWrite ( FOpen ( "myanimation.gif", "wb" ), $gif->GetAnimation ( ) );
-*/
 
 
 
 // Encode the PNG data as base64
-$base64_png = base64_encode($gif->GetAnimation ( ));
+    $base64_png = base64_encode($gif->GetAnimation ( ));
 
 // Return the base64 encoded PNG image
-header('Content-Type: text/plain');
-echo $base64_png;
-imagedestroy($image);
+    header('Content-Type: text/plain');
+    echo $base64_png;
+    imagedestroy($image);
+}catch(Exception $e){
+
+}
+
